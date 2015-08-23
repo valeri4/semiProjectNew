@@ -6,8 +6,17 @@ include_once './posts/showPosts.php';
 include_once './users/myInfoBlock.php';
 ?>
 
+<div class="container">
+
+
+
+</div>
+
+
 <div class="col-sm-3">
+    
     <?= viewInfoBlock() ?>
+    
 </div>
 
 <!-- main col right -->
@@ -25,6 +34,6 @@ include_once './users/myInfoBlock.php';
 
     <?= showPosts($dbCon) ?>
 
-    <?php
-    include_once './includes/footer.php';
-    ?>
+<?php
+include_once './includes/footer.php';
+?>

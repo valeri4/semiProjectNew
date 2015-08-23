@@ -1,14 +1,7 @@
 
-$(document).ready(function () {/* off-canvas sidebar toggle */
-
-    $('[data-toggle=offcanvas]').click(function () {
-        $(this).toggleClass('visible-xs text-center');
-        $(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
-        $('.row-offcanvas').toggleClass('active');
-        $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
-        $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
-        $('#btnShow').toggle();
-    });
+$(document).ready(function () {
+    
+    $('#postModal').modal({show:true});
 
     //Sign Up Collaps in login.php
     $("#signUpFormCollaps").click(function () {
@@ -28,9 +21,5 @@ $(document).ready(function () {/* off-canvas sidebar toggle */
                 $('#eventForm').formValidation('revalidateField', 'date');
             });
 
-
-    $('#about').tinymce({
-        menubar: false
-    });
 
 });

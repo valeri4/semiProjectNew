@@ -8,7 +8,7 @@ if (filter_input_array(INPUT_POST)) {
 
     $u_about = trim(filter_input(INPUT_POST, 'about'));
 
-    $sql = "UPDATE users SET u_about='$u_about' WHERE u_id=$uId ";
+    $sql = "UPDATE users SET u_about='$u_about' WHERE uuId='$uId' ";
 
     $result = $dbCon->query($sql);
     if (!$result) {

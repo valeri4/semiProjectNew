@@ -8,7 +8,7 @@ include_once './includes/header.php';
 $uId = userId();
 
 $sql = "SELECT * FROM users 
-                        WHERE u_id ='$uId' LIMIT 1";
+                        WHERE uuId='$uId' LIMIT 1";
 $result = $dbCon->query($sql);
 
 if (!$result) {
@@ -59,10 +59,10 @@ if (filter_input_array(INPUT_POST)) {
 
     //if password not changed
     if ($u_pwd == '') {
-        $sql = "UPDATE users SET u_f_name='$u_f_name', u_l_name='$u_l_name', u_b_day='$b_day', u_about='$u_about', u_gender='$u_gender' WHERE u_id=$uId ";
+        $sql = "UPDATE users SET u_f_name='$u_f_name', u_l_name='$u_l_name', u_b_day='$b_day', u_about='$u_about', u_gender='$u_gender' WHERE uuId='$uId' ";
     } else {
         $u_pwd = password_hash($u_pwd, PASSWORD_DEFAULT);
-        $sql = "UPDATE users SET u_f_name='$u_f_name', u_l_name='$u_l_name', u_b_day='$b_day', u_about='$u_about',u_gender='$u_gender', u_pwd='$u_pwd' WHERE u_id=$uId ";
+        $sql = "UPDATE users SET u_f_name='$u_f_name', u_l_name='$u_l_name', u_b_day='$b_day', u_about='$u_about',u_gender='$u_gender', u_pwd='$u_pwd' WHERE uuId='$uId' ";
     }
 
 

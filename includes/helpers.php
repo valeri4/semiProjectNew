@@ -16,13 +16,13 @@ function vd($expression) {
 
 function login($userArr) {
     $_SESSION['auth'] = true;
-    $_SESSION['u_id'] = $userArr['u_id'];
+    $_SESSION['uuId'] = $userArr['uuId'];
     $_SESSION['timeLogin'] = time()+ (60 * 60 * 24 * 365);
     $_SESSION['loggedUser'] = $userArr;
 }
 
 function userId() {
-    $uId = $_SESSION['u_id'];
+    $uId = $_SESSION['uuId'];
     return ($uId);
 }
 
@@ -42,7 +42,7 @@ function dateFormat($userDate) {
 function userArrRefresh($dbCon) {
     $uId = userId();
     $sql = "SELECT * FROM users 
-                        WHERE u_id ='$uId' LIMIT 1";
+                        WHERE uuId='$uId' LIMIT 1";
     $result = $dbCon->query($sql);
     if (!$result) {
         die('Query failed: ' . $dbCon->error);
@@ -52,7 +52,3 @@ function userArrRefresh($dbCon) {
     $_SESSION['loggedUser'] = $userArr;
 }
 
-
-function checkIFfriendORloggedUser(){
-    
-}

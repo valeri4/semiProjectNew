@@ -31,9 +31,11 @@ if (filter_input_array(INPUT_POST)) {
     $u_gender = $dbCon->real_escape_string($u_gender);
     $u_nickName = $dbCon->real_escape_string($u_nickName);
     
-
-    $sql = "INSERT INTO users (u_email, u_pwd, u_f_name, u_l_name, u_b_day, u_gender, u_nickName)
-            VALUES ('$u_email', '$u_pwd', '$u_f_name', '$u_l_name', '$b_day', '$u_gender', '$u_nickName')";
+    //generate UUID
+    $uuid = uniqid (rand (),true);
+    
+    $sql = "INSERT INTO users (uuId, u_email, u_pwd, u_f_name, u_l_name, u_b_day, u_gender, u_nickName)
+            VALUES ('$uuid','$u_email', '$u_pwd', '$u_f_name', '$u_l_name', '$b_day', '$u_gender', '$u_nickName')";
 
 
     $result = $dbCon->query($sql);

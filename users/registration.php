@@ -53,7 +53,10 @@ if (filter_input_array(INPUT_POST)) {
     $userArr = $result->fetch_assoc();
 
     //if registration successfully user logged in  
-    login($userArr, $lastId);
+    login($userArr);
+    
+    //After logIn -> redirect to index
+    redirect('../index.php');
 }
 
 //without Post -> redirect to index

@@ -32,8 +32,11 @@ include_once './users/myInfoBlock.php';
         </form>
     </div>
 
+    <div class="postsBlock">
+        
     <?= showPosts($dbCon) ?>
 
+    </div>
 <?php
 include_once './includes/footer.php';
 ?>

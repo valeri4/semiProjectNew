@@ -1,8 +1,9 @@
 $(function () {
-    var aboutTextArea = $('#aboutMeEmpty');
+    var aboutTextAreaEmpty = $('#aboutMeEmpty');
     
-    $('#postSend').click(function () {
-        var postText = 'userPostText=' + aboutTextArea.val();
+    $('#aboutSend').click(function () {
+        
+        var postText = 'about=' + aboutTextAreaEmpty.val();
         $.ajax({
             type: "POST",
             url: "users/aboutMe.php",
@@ -14,15 +15,11 @@ $(function () {
             complete: function () {
                 $("#loader").css("visibility", "hidden");
             },
-            success: function (jsondata) {
-                if (jsondata) {
-                    var json = JSON.parse(jsondata);//JSON Array Parsing
-                    
-                    //Html Post Block of added post by user
-                    var htmlPostVar =  '<div class="panel panel-default post"><div class="panel-heading"><a href="#" class="pull-right">'+json['dateTime']+'</a> <h4>'+json['userName']+'</h4></div><div class="panel-body">'+json['userPostText']+'</div></div>'; 
+            success: function () {
 
-                    $(".post:first").before(htmlPostVar);
-                }
+                    
+                    $(".aboutMe").after(aboutTextAreaEmpty.val());
+
             }
         });
     });

@@ -14,12 +14,11 @@ function vd($expression) {
     var_dump($expression);
 }
 
-function login($userArr, $userId) {
+function login($userArr) {
     $_SESSION['auth'] = true;
-    $_SESSION['u_id'] = $userId;
-    $_SESSION['timeLogin'] = time();
+    $_SESSION['u_id'] = $userArr['u_id'];
+    $_SESSION['timeLogin'] = time()+ (60 * 60 * 24 * 365);
     $_SESSION['loggedUser'] = $userArr;
-    redirect('../index.php');
 }
 
 function userId() {

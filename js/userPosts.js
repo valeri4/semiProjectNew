@@ -1,6 +1,6 @@
 $(function () {
     var aboutTextArea = $('#about');
-    
+
     $('#postSend').click(function () {
         var postText = 'userPostText=' + aboutTextArea.val();
         $.ajax({
@@ -17,11 +17,17 @@ $(function () {
             success: function (jsondata) {
                 if (jsondata) {
                     var json = JSON.parse(jsondata);//JSON Array Parsing
-                    
-                    //Html Post Block of added post by user
-                    var htmlPostVar =  '<div class="panel panel-default post"><div class="panel-heading"><a href="#" class="pull-right">'+json['dateTime']+'</a> <h4>'+json['userName']+'</h4></div><div class="panel-body">'+json['userPostText']+'</div></div>'; 
 
-                    $(".post:first").before(htmlPostVar);
+                    //Html Post Block of added post by user
+                    var htmlPostVar = '<div class="panel panel-default post"><div class="panel-heading"><a href="#" class="pull-right">' + json['dateTime'] + '</a> <h4>' + json['userName'] + '</h4></div><div class="panel-body">' + json['userPostText'] + '</div></div>';
+
+                    //Check If Post is First
+                    if ($(".post:first").length == 0) {
+                        
+                        $('.postsBlock').after(htmlPostVar);
+                    } else {
+                        $(".post:first").before(htmlPostVar);
+                    }
                 }
             }
         });

@@ -20,7 +20,17 @@ function showPosts($dbCon) {
             
             echo '    <div class="panel panel-default post">
         <div class="panel-heading"><a href="#" class="pull-right">' .$dateTime.'</a> <h4>' .$userName . '</h4></div>
-        <div class="panel-body">'.$temp['p_post'].'</div>  
+        <div class="panel-body">'.$temp['p_post'].'
+             <hr>
+                                    <form>
+                                    <div class="input-group">
+                                      <div class="input-group-btn">
+                                      <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-th-list"></i></button>
+                                      </div>
+                                        <input type="text" class="form-control" placeholder="Add a comment..">
+                                    </div>
+                                    </form>
+                                    </div> 
         </div>';
             $userPost[] = array(                   //Add post to array
                 'post' => $temp['p_post'],

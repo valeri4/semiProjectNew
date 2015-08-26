@@ -19,8 +19,24 @@ function showPosts($dbCon) {
             $dateTime = date("H:i d/m/y", strtotime(str_replace('/', '-', $temp['p_time'])));
             
             echo '    <div class="panel panel-default post" id="'.$temp['p_uniqid'].'">
-                        <div class="panel-heading"><a href="#" class="pull-right">' .$dateTime.'</a> <h4>' .$userName . '</h4></div>
-                        <div class="panel-body">'.$temp['p_post'].'
+                        <div class="panel-heading">
+                        
+                        <div class="dropdown pull-right">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#"class="editPost">Edit Post</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+
+
+
+                        <a href="#" class="pull-right datePost">' .$dateTime.'</a> <h4>' .$userName . '</h4></div>
+                        <div class="panel-body"><p>'.$temp['p_post'].'</p>
                              <hr>
                             <form>
                             <div class="input-group">

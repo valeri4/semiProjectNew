@@ -18,5 +18,6 @@
         <script src="js/userPosts.js" type="text/javascript"></script>
         <script src="js/scripts.js"></script>
         <script src="js/aboutMe.js" type="text/javascript"></script>
+        <script src="js/removeEditPosts.js" type="text/javascript"></script>
     </body>
 </html>

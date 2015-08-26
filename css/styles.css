@@ -5,6 +5,12 @@ html, body {
    color:#555555;
 }
 
+/*Post Block Start*/
+.datePost{
+    margin: 0 15px; 
+}
+/*POst Block End*/
+
 /*Find Friends Start*/
 .ui-autocomplete-loading {
     background: white url("../img/ajax-loader.gif") right center no-repeat;

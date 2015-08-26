@@ -1,6 +1,5 @@
 $(function () {
     var aboutTextArea = $('#about');
-    
 
     $('#postSend').click(function () {
         var postText = 'userPostText=' + aboutTextArea.val();

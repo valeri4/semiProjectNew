@@ -3,7 +3,8 @@ $(function () {
     var postText, postBlockId, updatedPostText, postBlock;
 
     //On click => Edit Post
-    $('.post .editPost').on('click',function () {
+    $('.postsBlock').on('click','.editPost',function () {
+        
         //Get Post Block Object
         postBlock = $(this).parents('.post');
         
@@ -11,6 +12,8 @@ $(function () {
 
         //Get Text Value of Post
         postText = $(postBlock).children().children('p').text();
+        
+        console.dir(postText);
 
         //Add Text of Post to Modal Window
         $('#textEditor').text(postText);
@@ -19,7 +22,7 @@ $(function () {
     });
     
     //Update Post
-    $('#updatePost').click(function () {
+    $('#editPostWindow').on('click', '#updatePost',function () {
         //Get Updated Post Text
         updatedPostText = $('#textEditor').val();
         
@@ -44,7 +47,7 @@ $(function () {
                 $(postBlock).children().children('p').text(updatedPostText);
                 
                 //Clear the Modal Window
-                $('#textEditor').val('');
+               // $('#textEditor').val('');
             }
         });
     });

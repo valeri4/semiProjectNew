@@ -55,7 +55,8 @@ include_once './users/myInfoBlock.php';
       </div>
       <div class="modal-footer">
           <div>
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Update</button>
+          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" id="updatePost">Update</button>
+          <img src="img/ajax-loader.gif" alt="loading..." class="loading" id="loader"/>
             <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
 		  </div>	
       </div>

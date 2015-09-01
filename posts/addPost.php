@@ -15,6 +15,6 @@ if (filter_input_array(INPUT_POST)) {
     }
     
     $postReturn = array('postUUid' => $uuPostId, 'userName' =>userName(), 'userPostText' =>$userPost, 'dateTime' => date("H:i d/m/y"));
-    
+
     echo json_encode($postReturn);  
 }

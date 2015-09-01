@@ -9,10 +9,10 @@ $(function () {
             data: postText,
             cache: false,
             beforeSend: function () {
-                $("#loader").css("visibility", "visible");
+                $("#loaderAddPost").css("visibility", "visible");
             },
             complete: function () {
-                $("#loader").css("visibility", "hidden");
+                $("#loaderAddPost").css("visibility", "hidden");
             },
             success: function (jsondata) {
                 if (jsondata) {

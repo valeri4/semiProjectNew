@@ -3,7 +3,6 @@ include_once './includes/global.php';
 include_once 'includes/auth.php';
 include_once './includes/header.php';
 
-
 //get userInfo from db and print into fields
 $uId = userId();
 
@@ -80,7 +79,15 @@ if (filter_input_array(INPUT_POST)) {
 }
 ?>
 
-<div class="col-sm-5 panel panel-default">
+<div class="col-sm-3">
+
+
+</div>
+
+<div class="col-sm-6 panel panel-default">
+
+
+
 <h2>Profile</h2>
 <form role="form" method="POST" id="userInfo">
     <div class="form-group ">
@@ -143,7 +150,7 @@ if (filter_input_array(INPUT_POST)) {
     <button type="submit" class="btn btn-default">Save</button>
 
 </form>
-</div>
+
 
 <?php
 include_once 'includes/footer.php';

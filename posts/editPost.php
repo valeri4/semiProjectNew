@@ -15,6 +15,6 @@ if (filter_input_array(INPUT_POST)) {
     }
 
     $postReturn = 'The Post was Updated';
-
+    
     echo json_encode($postReturn);
 }

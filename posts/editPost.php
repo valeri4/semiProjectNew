@@ -14,7 +14,7 @@ if (filter_input_array(INPUT_POST)) {
         die('Query failed: ' . $dbCon->error);
     }
 
-    $postReturn = 'OK';
+    $postReturn = 'The Post was Updated';
 
     echo json_encode($postReturn);
 }

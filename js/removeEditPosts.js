@@ -1,34 +1,38 @@
 $(function () {
 
     var postText, postBlockId, updatedPostText, postBlock;
-
+    
+    
+    
     //On click => Edit Post
-    $('.postsBlock').on('click','.editPost',function () {
-        
+    $('.postsBlock').on('click', '.editPost', function () {
+
         //Get Post Block Object
         postBlock = $(this).parents('.post');
-        
+
         postBlockId = postBlock.attr('id');
 
         //Get Text Value of Post
-        postText = $(postBlock).children().children('p').text();
-        
+        postText = $(postBlock).find('p').text();
+
         console.dir(postText);
 
         //Add Text of Post to Modal Window
-        $('#textEditor').text(postText);
+        $('#textEditor').val(postText);
         $('#editPostWindow').modal('show');
 
     });
     
+    
+
     //Update Post
-    $('#editPostWindow').on('click', '#updatePost',function () {
+    $('#updatePost').click(function () {
         //Get Updated Post Text
         updatedPostText = $('#textEditor').val();
-        
 
-        postText = 'userPostId='+postBlockId+'&userPostText='+updatedPostText;
-        
+
+        postText = 'userPostId=' + postBlockId + '&userPostText=' + updatedPostText;
+
         $.ajax({
             type: "POST",
             url: "posts/editPost.php",
@@ -42,22 +46,52 @@ $(function () {
             },
             success: function (jsondata) {
                 console.dir(jsondata);
-                
+
                 //Update Post 
-                $(postBlock).children().children('p').text(updatedPostText);
-                
-                //Clear the Modal Window
-               // $('#textEditor').val('');
+                $(postBlock).find('p').text(updatedPostText);
             }
         });
     });
 
     //On click => Delete Post
-    $('.post .deletePost').click(function () {
-        //Get Post Block Object
-        var postBlock = $(this).parents('.post');
+//    $('.post .deletePost').click(function () {
+//        //Get Post Block Object
+//        var postBlock = $(this).parents('.post');
+//
+//        $(postBlock).remove();
+//
+//    });
 
-        $(postBlock).remove();
+    //On click => Delete Post
+    $('.postsBlock').on('click', '.deletePost', function () {
+        
+        postBlock = $(this).parents('.post');
+        
+        //Get Post ID
+        postBlockId = postBlock.attr('id');
+
+        console.dir(postBlockId);
+        
+        postText = 'userPostDelete='+postBlockId;
+
+        $.ajax({
+            type: "POST",
+            url: "posts/deletePost.php",
+            data: postText,
+            cache: false,
+            beforeSend: function () {
+                $("#loader").css("visibility", "visible");
+            },
+            complete: function () {
+                $("#loader").css("visibility", "hidden");
+            },
+            success: function (jsondata) {
+                console.dir(jsondata);
+
+                $(postBlock).remove();
+
+            }
+        });
 
     });
 

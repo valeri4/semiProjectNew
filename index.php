@@ -34,6 +34,7 @@ include_once './users/myInfoBlock.php';
     <div class="postsBlock">
         <img src="img/ajax-loader.gif" alt="loading..." class="loading" id="contentLoading"/>
         <?= showPosts($dbCon) ?>
+        <span id="loadNewPosts"><h3>LOAD</h3></span>
         
     </div>
 

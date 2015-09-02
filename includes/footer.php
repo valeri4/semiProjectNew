@@ -19,5 +19,7 @@
         <script src="js/scripts.js"></script>
         <script src="js/aboutMe.js" type="text/javascript"></script>
         <script src="js/removeEditPosts.js" type="text/javascript"></script>
+        <script src="js/lib/jquery.visible.min.js" type="text/javascript"></script>
+        <script src="js/loadPosts.js" type="text/javascript"></script>
     </body>
 </html>

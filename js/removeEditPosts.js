@@ -15,8 +15,6 @@ $(function () {
         //Get Text Value of Post
         postText = $(postBlock).find('p').text();
 
-        console.dir(postText);
-
         //Add Text of Post to Modal Window
         $('#textEditor').val(postText);
         $('#editPostWindow').modal('show');
@@ -45,7 +43,6 @@ $(function () {
                 $("#loader").css("visibility", "hidden");
             },
             success: function (jsondata) {
-                console.dir(jsondata);
 
                 //Update Post 
                 $(postBlock).find('p').text(updatedPostText);
@@ -70,8 +67,6 @@ $(function () {
         //Get Post ID
         postBlockId = postBlock.attr('id');
 
-        console.dir(postBlockId);
-        
         postText = 'userPostDelete='+postBlockId;
 
         $.ajax({
@@ -86,7 +81,6 @@ $(function () {
                 $("#loader").css("visibility", "hidden");
             },
             success: function (jsondata) {
-                console.dir(jsondata);
 
                 $(postBlock).remove();
 

@@ -5,7 +5,7 @@ function showPosts($dbCon) {
     $userName = userName(); //Username Function from helpers
 
     //Select by DESC Time
-    $sql = "SELECT * FROM posts WHERE u_id = '$uId' ORDER BY p_time DESC LIMIT 5,5";
+    $sql = "SELECT * FROM posts WHERE u_id = '$uId' ORDER BY p_time DESC";
     $result = $dbCon->query($sql);
 
     if (!$result) {

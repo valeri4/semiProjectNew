@@ -45,13 +45,7 @@
                                 </form>
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
-                                    </li>
-                                    <li>
                                         <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><span class="badge">badge</span></a>
                                     </li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">

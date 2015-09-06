@@ -1,8 +1,7 @@
 $(function(){
     
-    $(window).scroll(function(){
-        $('#loadNewPosts').visible(alert('LOADDDDD'));
-            
-    });
+$('.wrapper').scroll(function (){
+    alert('dsdfdsfds');
+});
 
 });

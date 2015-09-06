@@ -20,7 +20,7 @@ if (filter_input_array(INPUT_POST)) {
     
     
     //If userSearch is logened user => No Result!
-    if($userArr['u_id'] == $_SESSION['u_id']){
+    if($userArr['uuId'] == $_SESSION['uuId']){
         $userArr = NULL;
     }
     
